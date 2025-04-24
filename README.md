@@ -34,7 +34,7 @@ Watch the demo here: https://youtu.be/aedojYOPCrg
 Clone the repo and run the server:
 
 ```bash
-git clone https://github.com/your-username/webrtc-final.git
+git clone https://github.com/Jesuthan/webrtc-final.git
 cd webrtc-final
 npm install
 node server.js
