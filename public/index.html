@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Live With Us</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+    crossorigin="anonymous"
+  />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="join-wrapper">
+    <div class="form-card">
+      <h1><i class="fas fa-comments"></i> Live With Us</h1>
+      <p>Select your username and a chat room to begin</p>
+      <form action="chat.html" class="join-form">
+        <div class="input-group">
+          <label for="username"><i class="fas fa-user"></i> Username</label>
+          <input type="text" name="username" id="username" placeholder="Enter your name..." required />
+        </div>
+        <div class="input-group">
+          <label for="room"><i class="fas fa-door-open"></i> Room</label>
+          <select name="room" id="room">
+            <option value="Youtube">Youtube</option>
+            <option value="Gaming">Gaming</option>
+            <option value="AI">AI</option>
+            <option value="Engineering">Engineering</option>
+            <option value="WebRtc">WebRtc</option>
+            <option value="UOJ">UOJ</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-join"><i class="fas fa-sign-in-alt"></i> Join Now</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

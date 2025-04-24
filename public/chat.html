@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live With Us</title>
+
+  <!-- Bootstrap & Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <!-- Firebase & WebRTC -->
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script src="https://www.webrtc-experiment.com/common.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container-fluid h-100 d-flex flex-column">
+    <header class="d-flex justify-content-between align-items-center bg-primary text-white p-3">
+      <h3><i class="fas fa-comments"></i> Live With Us</h3>
+      <div>
+        <button id="toggle-mute" class="btn btn-light mr-2" title="Mute">
+          <i class="fas fa-microphone-alt"></i>
+        </button>
+        <button id="toggle-video" class="btn btn-light mr-2" title="Hide Video">
+          <i class="fas fa-video"></i>
+        </button>
+        <a href="index.html" id="leave-btn" class="btn btn-danger">Leave Room</a>
+      </div>
+    </header>
+
+    <main class="flex-grow-1 d-flex overflow-hidden">
+      <!-- Sidebar -->
+      <aside class="bg-light border-right p-3" style="width: 250px;">
+        <h5><i class="fas fa-door-open"></i> Room:</h5>
+        <h6 id="room-name" class="mb-3 text-primary">Loading...</h6>
+
+        <h5><i class="fas fa-users"></i> Users</h5>
+        <ul id="users" class="list-unstyled small text-muted"></ul>
+      </aside>
+
+      <!-- Video and Chat Area -->
+      <section class="flex-grow-1 d-flex flex-column">
+        <!-- Video Panel -->
+        <div id="videos" class="d-flex flex-wrap justify-content-center align-items-center p-3 border-bottom" style="min-height: 300px;">
+          <div id="videopanel" class="p-2">
+            <video
+              id="yourVideo"
+              name="yourVideo"
+              muted
+              autoplay
+              playsinline
+              controls
+              class="rounded shadow"
+              width="320"
+              height="240"
+            ></video>
+          </div>
+        </div>
+
+        <!-- Chat Panel -->
+        <div class="chat-message-box flex-grow-1 d-flex flex-column">
+          <div class="chat-messages p-3 overflow-auto flex-grow-1" style="background-color: #f9f9f9;"></div>
+          <div class="chat-form-container p-3 border-top bg-white">
+            <form id="chat-form" class="d-flex">
+              <textarea
+                id="msg"
+                class="form-control mr-2"
+                placeholder="Type a message..."
+                required
+                rows="1"
+              ></textarea>
+              <button class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+/* Reset & Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: gradientMove 5s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #333;
+  overflow: hidden;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Join Wrapper */
+.join-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  z-index: 1;
+}
+
+/* Glassmorphism Form Card */
+.form-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+  position: relative; /* Ensure the content stays on top */
+  z-index: 2; /* Makes sure form card stays above the background */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-card h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.form-card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #f0f0f0;
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Inputs and Select */
+.input-group {
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #ccc;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Button */
+.btn-join {
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-join:hover {
+  background: linear-gradient(135deg, #a777e3, #6e8efb);
+  transform: scale(1.03);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus Effects on Form Elements */
+.input-group input:focus,
+.input-group select:focus,
+.btn-join:focus {
+  outline: none;
+  border: 1px solid #fff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
